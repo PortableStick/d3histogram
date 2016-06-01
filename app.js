@@ -144,6 +144,7 @@ function makeChart(data) {
         //draw this on top of line graph on barTooltip
 
         var circle = svg.append("circle")
+            .style('display', 'none')
             .attr("class", "lineGraphCircle")
             .attr("r", 8);
 
