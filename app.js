@@ -1,6 +1,3 @@
-//Responsiveness TODO:
-////Replace chart with table of values when too small
-////Check for whatever can be moved to stylesheet
 function makeChart(data) {
     var bars, line, height, width,
         yScale = d3.scale.linear().domain(d3.extent(data.productivity)),
@@ -40,7 +37,7 @@ function makeChart(data) {
             })
             .interpolate('linear');
 
-        var svg = container.append('svg').style('background', '#eee')
+        var svg = container.append('svg')
             .attr('width', width + margin.left + margin.right)
             .attr('height', height + margin.top + margin.bottom)
             .append('g')
@@ -118,6 +115,7 @@ function makeChart(data) {
             .data(data.wages)
             .enter()
             .append('rect')
+            .classed('bar', true)
             .attr({
                 width: xScale.rangeBand() - barPadding,
                 x: function(d, i) {
@@ -130,9 +128,6 @@ function makeChart(data) {
                     return height;
                 },
                 'data-legend': 'Worker wages'
-            })
-            .style({
-                "fill": "blue"
             });
         //need to draw svg before adding event handler because svg is shit
         //productivity to line graph
@@ -150,8 +145,6 @@ function makeChart(data) {
 
         var circle = svg.append("circle")
             .attr("class", "lineGraphCircle")
-            .style("fill", "red")
-            .style("stroke", "red")
             .attr("r", 8);
 
         bars.on('mouseover', function(d, i) {
@@ -176,19 +169,6 @@ function makeChart(data) {
                         'cx': xScale(currentYear) + (xScale.rangeBand() / 2),
                         'cy': yScale(avgProdData)
                     })
-
-                // circleInfo
-                //     .attr({
-                //         'dx': xScale(currentYear) - 90,
-                //         'dy': yScale(currentProdData) - 30
-                //     }).append('text')
-                //     .style("fill", "white")
-                //     .style("stroke-width", "1")
-                //     .style("opacity", 0.8)
-                //     .text(currentProdData + '%')
-                //     .attr({
-                //         'font-size': '1.8em'
-                //     });
             })
             .on('mouseout', function(d) {
                 barTooltip

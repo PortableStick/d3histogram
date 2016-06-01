@@ -1,3 +1,11 @@
+#chart svg {
+  background: #eee;
+}
+
+rect.bar {
+  fill: blue;
+}
+
 .axis path,
 .axis line {
     fill: none;
@@ -37,4 +45,9 @@ div.circleToolTip {
     border-radius: 8px;
     pointer-events: none;
     color: white;
+}
+
+circle.lineGraphCircle {
+  fill: red;
+  stroke: red;
 }
