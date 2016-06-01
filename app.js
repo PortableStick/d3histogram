@@ -151,7 +151,8 @@ function makeChart(data) {
         bars.on('mouseover', function(d, i) {
                 var currentYear = data.years[i],
                     currentProdData = data.productivity[i],
-                    avgProdData = (currentProdData + data.productivity[i + 1]) / 2;
+                    avgProdData = i < data.productivity.length - 1 ? (currentProdData + data.productivity[i + 1]) / 2 : currentProdData;
+
                 barTooltip.style('opacity', 0.9);
                 barTooltip.html(d + '%')
                     .style({
@@ -167,7 +168,7 @@ function makeChart(data) {
                 circle.style('display', 'initial')
                 circle
                     .attr({
-                        'cx': xScale(currentYear) + (xScale.rangeBand() / 2),
+                        'cx': xScale(currentYear) + (i < data.productivity.length - 1 ? (xScale.rangeBand() / 2) : 0),
                         'cy': yScale(avgProdData)
                     })
             })
