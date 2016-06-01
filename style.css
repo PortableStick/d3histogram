@@ -3,7 +3,15 @@
 }
 
 rect.bar {
-  fill: blue;
+  fill: #738C77;
+
+}
+
+.productivity {
+  stroke: #8F5966;
+  fill: none;
+  stroke-width: 8;
+  opacity: 0.8;
 }
 
 .axis path,
@@ -40,7 +48,7 @@ div.circleToolTip {
     height: 1.4em;
     padding: 0.2em;
     font: 1.8em sans-serif;
-    background: lightsteelblue;
+    background: #8FABFF;
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
@@ -48,6 +56,7 @@ div.circleToolTip {
 }
 
 circle.lineGraphCircle {
-  fill: red;
-  stroke: red;
+  opacity: 0.8;
+  fill: #06BF90;
+  stroke: #06BF90;
 }

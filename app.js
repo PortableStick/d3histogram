@@ -134,10 +134,7 @@ function makeChart(data) {
         line = svg.append("path")
             .datum(data.productivity)
             .attr({
-                'stroke': lineColor,
-                'fill': 'none',
-                'class': 'line',
-                'stroke-width': '8',
+                'class': 'productivity',
                 'd': lineGraphGen,
                 'data-legend': 'Worker productivity'
             });
