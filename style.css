@@ -1,0 +1,40 @@
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.x text{
+ transform: rotate(65);
+}
+
+.legend {
+  fill: none;
+  stroke: black;
+  opacity: 0.8;
+}
+
+.legend text {
+  fill: black;
+  stroke-width: 0.4;
+}
+div.barTooltip,
+div.circleToolTip {
+    position: absolute;
+    text-align: center;
+    width: 5em;
+    height: 1.4em;
+    padding: 0.2em;
+    font: 1.8em sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    color: white;
+}
